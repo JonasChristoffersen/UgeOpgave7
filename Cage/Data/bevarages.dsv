@@ -1,6 +1,0 @@
-Name, Price, Size, isAlcoholic, Stock
-Beer, 75, 33, true, 100
-Wine, 100, 33, true, 3
-Wine, 300, 100, true, 10
-Cola, 10, 33, false, 100
-Shot, 30, 10, true, 10
