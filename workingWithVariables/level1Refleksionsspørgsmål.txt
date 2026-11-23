@@ -1,0 +1,179 @@
+Level 1 Refleksionsspørgsmål
+Efter du har løst opgaverne, tænk over:
+
+----------------------------------------------------------------------------
+
+1. Hvad er forskellen mellem declaration og initialization?
+Declaration:
+En declaration er når man erklære en variabel. Altså det er her du opretter
+selve variablen. Variablen har ikke nogle værdi endnu, men den er klar
+til at blive brugt når den er blevet erklæret (declaration)
+Dette kan fx se således ud: "int age;"
+Med denne linje er variablen age erklæret, men den indeholder ikke nogle værdi
+endnu.
+
+Initialization:
+En initialization giver den første værdi til en variabel som er allerede er
+blevet erklæret.
+Det vil sige at variablen altså først modtager/får en værdi når den bliver
+initialiseret. For at give variablen en værdi kan man fx gøres på følgende
+måde: "age = 25;"
+Denne linje bygger videre på den variabel jeg nævnte ovenfor, da jeg erklæret
+den. Og ved at skrive "age = 25;" så initialisere vi variablen med værdien 25.
+
+Samlet eksempel:
+int age;
+age = 25;
+
+Eksempel forklaring:
+Den første linje erklære en variabel kaldet "age"
+Den anden linje tildeler/tilføjer værdien 25 til variablen
+
+----------------------------------------------------------------------------
+
+2. Hvilke data typer har du arbejdet med?
+I level 1 har jeg arbejdet med følgende data typer:
+- String y
+- int y
+- double y
+- char y
+- boolean --
+
+De forskellige data typer bruges til hver deres formål og på forskellige måder.
+Nedenfor her er en kort forklaring af hver data type:
+
+String:
+String skal skrives med stort "S". String bruges til at skrive en længere tekst
+som evt kan printes i terminalen.
+Denne data type bruge double quotes!
+For at lave en variabel med String kan det fx se således ud:
+1: String name = "Anna";
+2: String city = "Copenhagen";
+3: String message = "Hello, World!";
+Ovenfor har jeg indsat 3 eksempler på hvordan String kan bruges som variabel.
+
+int:
+int skrives uden at bruge nogle som helst store bogstaver.
+Denne data type bruges til at skrive hele tal. Det vil altså sige at data typen
+ikke godtager fx "19.99" - Her ville JAVA ikke godtage det skrevne og filen ville
+ikke kunne compile!
+int værdi skal altså derfor være et tal som er helt. Det kunne fx være 1, 5 elle 100.
+For at lave en variabel med int kan det fx se således ud:
+1: int age = 25;
+2: int quantity = 100;
+3: int temperature = -5;
+Ovenfor har jeg indsat 3 eksempler på hvordan int kan bruges som variabel.
+
+double:
+double skrives uden at bruge nogle som helst store bogstaver.
+Denne data type bruges til at skrive tal med decimaler. Det vil altså sige
+at int som forklaret ovenfor bruges til hele tal, og double bruges så snart
+at man ønsker der skal vises decimaler.
+For at lave en variabel med double kan det fx se således ud:
+1: double price = 19.99;
+2: double height = 1.75;
+3: double temperature = 36.5;
+Ovenfor har jeg indsat 3 eksempler på hvordan double kan bruges som variabel.
+
+char:
+char skrives uden at bruge nogle som helst store bogstaver.
+Denne data type bruges til at printe enkelt tegn/bogstaver. Det kan fx være at
+man ønsker at lave et enkelt symbol eller man vil printe initialer med kun et
+bogstav.
+Denne data type bruge single quotes!
+For at lave en variabel med double kan det fx se således ud:
+char grade = 'A';
+char initial = 'M';
+char symbol = '@';
+Ovenfor har jeg indsat 3 eksempler på hvordan char kan bruges som variabel.
+
+boolean:
+boolean skrives uden at bruge nogle som helst store bogstaver.
+Denne data type bruges til at angive om et statement er true eller false!
+Det vil altså sige at en boolean KUN kan være true eller false.
+For at lave en variabel med boolean kan det fx se således ud:
+1: boolean isStudent = true;
+2: boolean isRaining = false;
+3: boolean hasDiscount = true;
+Ovenfor har jeg indsat 3 eksempler på hvordan boolean kan bruges som variabel.
+
+----------------------------------------------------------------------------
+
+3. Hvornår bruger du int vs double?
+For mere dybdegående kontekst ift disse to data typer; gå tilbage og læs
+ovenstående afsnit ift hvilke data typer jeg har arbejdet med i dette level.
+
+Kort forklaret kan det beskrives ved at int altid er et helt tal, og bruges hvis
+man ikke ønsker at få decimaler. Hvis man derimod ønsker at få decimaler, så skal
+man bruge double, da den tager 2 decimaler med!
+
+----------------------------------------------------------------------------
+
+4. Hvad er forskellen mellem char og String?
+For mere dybdegående kontekst ift disse to data typer; gå tilbage og læs
+ovenstående afsnit ift hvilke data typer jeg har arbejdet med i dette level.
+
+Kort forklaret kan det beskrives vat at char kun kan indeholde 1 character.
+Det vil altså sige at man fx ville kunne skrive "A" eller "5" ved at bruge
+char. Hvis man derimod bruger String kan man skrive en hel sætning som fx:
+"Denne sætning kan skrives ved brug af String"
+
+----------------------------------------------------------------------------
+
+5. Hvad betyder det at en boolean kun kan være true eller false?
+Det betyder at denne data type ikke kan indeholde hverken tal eller tekst.
+Den kan simpelthen "kun" fortælle om noget er sandt eller falsk.
+
+----------------------------------------------------------------------------
+
+6. Hvad sker der når du caster double til int?
+Når man caster double til int vil det sige at man tager en variabel som er
+erklæret fra start som double og nu ønsker man at lave denne om til en int.
+Når dette bliver gjort bortfalder decimalerne. Det vil altså sige at der hverken
+bliver rundet op eller ned - Men sletter i bund og grund bare decimalerne.
+
+Eksempel på cast double til int:
+double decimal = 10.75;
+int whole = (int) decimal;
+
+Forklaring for ovenstående eksempel:
+Første linje erklære double variablen "decimal" med værdien 10.75.
+Anden linje omskriver decimal ved at skrive (int) i værdien som bliver initialiseret
+
+----------------------------------------------------------------------------
+
+7. Hvorfor er det vigtigt at give variabler meningsfulde navne?
+Det er vigtigt da programmet som man sidder og arbejder på hurtigt kan blive
+uoverskueligt hvis ikke der er navne som er meningsfulde og forståelige.
+
+En god sammenligning ville være at stå i et supermarked, og kigge på fx kaffe;
+der er 4 forskellige typer kaffe på hylden, men pris skiltende står ikke lige
+ved selve varen, og beskrivelsen af de forskellige kaffe produkter er:
+1: Kaffe1
+2: Kaffe2
+3: Kaffe3
+4: Kaffe4
+Som kunde i dette eksempel aner du ikke hvad der hører til hvad.
+
+Så for at round up: navngivningen er vigtig så man kan nemmere kan læse koden og
+finde frem til hvad der sker og hvor der evt måtte være fejl.
+
+----------------------------------------------------------------------------
+
+8. Hvad er et array, og hvordan læser du et element fra det?
+Et array er en liste af data. Listen kan indeholde lige så meget data som man ønsker
+dog skal man være opmærksom på hvordan man trækker data ud af det array som man har
+defineret.
+Alt det data som der står i et array bliver tildelt et nummer, alt efter hvilken plads
+det står på. Man starter ALTID med at tæller fra 0, og så køre den op derfra.
+Det vil altså sige at aller første plads i et array er 0!
+
+Eksempel på brug af array:
+int[] scores = {100, 85, 92, 78};
+System.out.println(scores[0]);
+System.out.println(scores[2]);
+
+Forklaring af eksempel ovenfor:
+Første linje erklærer mit array, og de data som array skal indeholde.
+Anden linje printer den værdi som der står i array. I dette tilfælde er det "100"!
+Anden linje printer den værdi som der står i array. I dette tilfælde er det "92"!

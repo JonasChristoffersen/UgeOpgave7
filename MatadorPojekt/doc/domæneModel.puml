@@ -1,0 +1,119 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'<|-- (is-a relation)
+' *-- (has-a relation)
+object Game
+object Dice
+object Board
+object Field
+object ChanceCard
+object Land
+object Tax
+object Prison
+object Start
+object Parking
+object ChanceField
+object Building
+object Business
+object House
+object Hotel
+object Brewery
+object ShippingCompany
+object GoToPrison
+object Player
+object Account
+object Rules
+object Property
+
+object Game {
+}
+Game "1" o-- "1" Board : has-a
+Game "1" o-- "2" Dice : has-a
+Game "1" o-- "2..6" Player : has-a
+Game "1" *-- "1" Rules : has-a
+
+object Dice {
+}
+
+object Board {
+}
+Board "1" *-- "40" Field : has-a
+Board "1" o-- "60" ChanceCard : has-a
+
+object Field {
+}
+Field <|-- "28" Land : is-a
+Field <|-- "2" Tax : is-a
+Field <|-- "1" Prison : is-a
+Field <|-- "1" GoToPrison : is-a
+Field <|-- "1" Start : is-a
+Field <|-- "6" ChanceField : is-a
+Field <|-- "1" Parking : is-a
+
+object Parking {
+}
+
+object ChanceField {
+}
+
+
+object ChanceCard {
+}
+
+object Tax {
+}
+
+object Prison {
+}
+
+object GoToPrison {
+}
+
+object Start {
+}
+
+object Land {
+}
+Land *-- "22" Property : has-a
+Land *-- "6" Business : has-a
+
+object Property {
+}
+Property "1" o-- "0..4" Building : has-a
+
+
+object Building {
+}
+Building <|-- "0..4" House : is-a
+Building <|-- "0..1" Hotel : is-a
+
+object House {
+}
+
+object Hotel {
+}
+
+object Business {
+}
+Business <|-- "2" Brewery : is-a
+Business <|-- "4" ShippingCompany : is-a
+
+object Brewery {
+}
+
+object ShippingCompany {
+}
+
+object Player {
+}
+Player "1" *-- "1" Account : has-a
+
+object Account {
+}
+
+object Rules {
+}
+
+
+@enduml
