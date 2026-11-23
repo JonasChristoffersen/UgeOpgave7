@@ -1,0 +1,110 @@
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class TextUI {
+    Scanner scan = new Scanner(System.in);
+
+    public String promptText(String msg) {
+        System.out.println(msg);
+        String input = scan.nextLine();
+        return input;
+    }
+
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
+
+    public boolean promptBinary(String msg) {
+        String input = promptText(msg).toLowerCase();
+        if (input.equals("y")) {
+            return true;
+        }
+        if (input.equals("n")) {
+            return false;
+        }
+        return promptBinary(msg);
+    }
+
+    public int readInt(String msg, int min, int max) {
+        System.out.println(msg);
+        int input = 0;
+        try {
+            input = scan.nextInt();
+            scan.nextLine();//scanner bug flush
+            if (input >= min && input <= max) {
+                return input;
+            } else {
+                return readInt(msg, min, max);
+            }
+        } catch(InputMismatchException e){
+            scan.nextLine();
+            System.out.println("Write a number between: " + min + " - " + max);
+            return readInt(msg, min, max);
+        }
+    }
+
+    public int promptNumeric(String msg) {
+        System.out.println(msg);
+        int input = 0;
+        try {
+            input = scan.nextInt();
+        } catch (InputMismatchException e) {
+            scan.nextLine();
+            System.out.println("Write a number");
+            input = promptNumeric(msg);
+        }
+        scan.nextLine();//scannerbug flush
+        return input;
+    }
+
+    public double promptDoubleNumeric(String msg) {
+        System.out.println(msg);
+        double input = 0.0;
+        try {
+            input = scan.nextDouble();
+        } catch (InputMismatchException e) {
+            scan.nextLine();
+            System.out.println("Write a number");
+            input = promptDoubleNumeric(msg);
+        }
+        scan.nextLine();//scannerbug flush
+        return input;
+    }
+
+    public void displayList(ArrayList<String> list, String msg, boolean numbered) {//parameter der forstæller OM listen er nummereret eller ej.
+        System.out.println(msg);
+        for (int i = 0; i < list.size(); i++) {
+            String s;
+            if (numbered) {
+                s = i + 1 + ". " + list.get(i);
+
+            } else {
+
+                s = list.get(i);
+            }
+            System.out.println(s);
+        }
+    }
+
+    public ArrayList<String> promptChoice(ArrayList<String> options, int limit, String msg) {
+        ArrayList<String> choices = new ArrayList<>();
+        while (choices.size() < limit) {
+            int input = this.promptNumeric(msg);
+            if (input > 0 && input <= options.size()) {
+                String choice = options.get(input - 1);
+                choices.add(choice);
+            } else {
+                System.out.println("ugyldigt input");
+            }
+
+        }
+        return choices;
+    }
+
+    public int promptMenuChoice(ArrayList<String> menu, String msg) {
+        displayList(menu, msg, true);
+        int input = this.promptNumeric("tast et tal");
+        return input;
+    }
+}
