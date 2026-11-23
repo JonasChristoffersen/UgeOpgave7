@@ -1,8 +1,0 @@
-@startuml
-'https://plantuml.com/class-diagram
-
-object Game
-object Unit
-
-
-@enduml
